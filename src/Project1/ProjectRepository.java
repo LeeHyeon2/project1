@@ -727,23 +727,26 @@ public class ProjectRepository {
 								System.out.print(md.get(i).getMark() + md.get(i).getNum() + " ");
 							}
 							System.out.println();
+							
 							System.out.print("중립 카드 : ");
 							for (int i = 0; i < mtd.size(); i++) {
 								System.out.print(mtd.get(i).getMark() + mtd.get(i).getNum() + " ");
 							}
 							System.out.println();
-							System.out.println("상대 카드 :" + od.get(0).getMark() + od.get(0).getNum() + " "
-									+ od.get(1).getMark() + od.get(1).getNum() + " " + od.get(2).getMark()
-									+ od.get(2).getNum() + " " + od.get(3).getMark() + od.get(3).getNum());
-
+							
+							System.out.print("상대 카드 :");
+							for (int i = 0; i < 4; i++) {
+								System.out.print(od.get(i).getMark() + od.get(i).getNum() + " ");
+							};
+							System.out.println();
+							
 							String[] valueArr = { "탑", "원페어", "투페어", "트리플", "스트레이트", "플러쉬", "풀하우스", "포카드", "스티플",
 									"로티플" };
-							String[] markArr = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
-							System.out.println("나 : " + markArr[(int) (myMaxCard - 2)] + valueArr[(int) (myValue - 1)]); // 최종
-																															// 패
-																															// 출력
+							String[] numArr = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
+							System.out.println("나 : " + numArr[(int) (myMaxCard - 2)] + valueArr[(int) (myValue - 1)]); // 내 패 출력
+																															
 							System.out.println(
-									"상대 : " + markArr[(int) (otherMaxCard - 2)] + valueArr[(int) (otherValue - 1)]);
+									"상대 : " + numArr[(int) (otherMaxCard - 2)] + valueArr[(int) (otherValue - 1)]); // 상대 패 출력
 
 							// 결과
 							if (myValue > otherValue) {
